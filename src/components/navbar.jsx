@@ -1,4 +1,7 @@
+import { useState } from "react"
+
 const Navbar = () => {
+    const [open, setOpen] = useState(false);
     return (
         <div className='w-full h-16 md:h-20 flex items-center justify-between'>
 
@@ -9,7 +12,12 @@ const Navbar = () => {
             </div>
 
             {/* mob-m */}
-            <div className="md:hidden">M</div>
+            <div className="md:hidden">
+                <div className="cursor-pointer text-4xl" onClick={() => setOpen((prev) => !prev)}>
+                    {open ? "X" : "="}
+
+                </div>
+            </div>
             {/* deskt-m */}
             <div className="hidden md:flex">D</div>
         </div>
